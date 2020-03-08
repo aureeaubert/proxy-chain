@@ -1,5 +1,4 @@
 import urlModule from 'url';
-import { _checkIsHttpToken, _checkInvalidHeaderChar } from '_http_common'; // eslint-disable-line
 import portastic from 'portastic';
 // import through from 'through';
 
@@ -53,9 +52,7 @@ export const isInvalidHeader = (name, value) => {
     // NOTE: These are internal Node.js functions, they might stop working in the future!
     return typeof name !== 'string'
         || !name
-        || !_checkIsHttpToken(name)
         || value === undefined
-        || _checkInvalidHeaderChar(value);
 };
 
 /**
